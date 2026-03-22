@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>영주권(F-5) 마스터 내비게이션</title>
+    <style>
+        body { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 15px; color: #333; }
+        .header { text-align: center; margin-bottom: 20px; padding-top: 10px; }
+        .header h2 { font-size: 22px; margin-bottom: 5px; color: #2c3e50; }
+        .header p { font-size: 14px; color: #7f8c8d; }
+        
+        .btn-container { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+        .btn { display: block; text-decoration: none; text-align: center; padding: 15px; font-size: 14px; font-weight: bold; color: white; border: none; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; box-sizing: border-box; }
+        .btn-step1 { background-color: #16a085; }
+        .btn-step2 { background-color: #27ae60; }
+        .btn-step3 { background-color: #2980b9; }
+        .btn-step4 { background-color: #8e44ad; }
+        .btn-step5 { background-color: #f39c12; }
+        .btn-step6 { background-color: #c0392b; }
+        .expert-contact { text-align: center; margin-top: 5px; font-size: 15px; font-weight: bold; color: #d35400; }
+        
+        .detail-screen { display: none; background-color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+        .btn-back { display: block; width: 100%; padding: 12px; background-color: #34495e; color: white; font-weight: bold; text-align: center; border-radius: 8px; margin-bottom: 15px; text-decoration: none; box-sizing: border-box; }
+        
+        .highlight { color: #e74c3c; font-weight: bold; }
+        .title-badge { display: inline-block; padding: 4px 8px; background-color: #eee; border-radius: 4px; font-weight: bold; margin-bottom: 15px;}
+        .section-title { font-weight: bold; margin-top: 15px; margin-bottom: 5px; color: #2c3e50; }
+        ul { padding-left: 20px; margin-top: 5px; margin-bottom: 15px; }
+        li { margin-bottom: 6px; }
+        
+        .point-box { background-color: #f8f9fa; border-left: 4px solid #3498db; padding: 10px 15px; margin: 10px 0; border-radius: 4px; font-size: 13px; }
+        .point-box h5 { margin: 0 0 5px 0; color: #2980b9; }
+        .citation { font-size: 11px; color: #95a5a6; display: block; margin-top: 2px; }
+    </style>
+</head>
+<body>
+
+    <div id="home-screen">
+        <div class="header">
+            <h2>🏆 영주권(F-5) 마스터 내비게이션</h2>
+            <p>유학에서 영주권까지, 단계별 경로를 확인하세요.</p>
+        </div>
+        <div class="btn-container">
+            <a href="#view" class="btn btn-step1" onclick="openDetail('step1')">▶ 단계 1 : D-2 ➔ D-10 ➔ E-7 (취업)</a>
+            <a href="#view" class="btn btn-step2" onclick="openDetail('step2')">▶ 단계 2 : E-7 ➔ F-2-7 (우수인재 거주)</a>
+            <a href="#view" class="btn btn-step3" onclick="openDetail('step3')">▶ 단계 3 : F-2-7 ➔ F-5-16 (점수제 영주)</a>
+            <a href="#view" class="btn btn-step4" onclick="openDetail('step4')">▶ 특 례 : E-7 ➔ F-5-10 (국내학위 영주)</a>
+            <a href="#view" class="btn btn-step5" onclick="openDetail('step5')">▶ 동 포 : F-4, H-2 ➔ F-5 (동포 영주)</a>
+            <a href="#view" class="btn btn-step6" onclick="openDetail('step6')">⚠️ 주의 : G-1(기타) 비자의 자격변경 한계</a>
+            <div class="expert-contact">📞 엑스퍼트행정사 010-9077-4388</div>
+        </div>
+    </div>
+
+    <div id="view" style="position:relative; top:-15px;"></div>
+
+    <div id="content-step1" class="detail-screen">
+        <a href="javascript:void(0);" onclick="goBack()" class="btn-back">🔙 메인화면으로 돌아가기</a>
+        <div class="title-badge">단계 1: 유학에서 취업으로</div>
+        
+        <div class="section-title">■ 1-1. D-2 (유학) ➔ D-10 (구직)</div>
+        <ul>
+            <li><b>조건:</b> 국내 전문학사 이상 졸업자</li>
+            <li><b>특례:</b> 국내 졸업생 최초 신청 시 점수제 면제 (기본 6개월)</li>
+            <li><b>연장 시 점수제 적용:</b></li>
+        </ul>
+        <div class="point-box">
+            <h5>📊 D-10 구직 점수제 (총 190점 만점)</h5>
+            • <b>합격 기준:</b> 기본항목 20점 이상 포함, <b>총점 60점 이상</b><br>
+            • 기본항목(50점): 연령(20), 최종학력(30)<br>
+            • 선택항목(70점): 한국어능력(20), 국내유학(30), 취업경력(15) 등<br>
+            • 가점항목(70점): 이공계 학사(5), 우수대학 졸업 등
+        </div>
+
+        <div class="section-title">■ 1-2. D-10 (구직) ➔ E-7 (취업)</div>
+        <ul>
+            <li><b>일반(E-7-1):</b> 본인 전공과 연관된 직종 취업 시 1년 실무경력 면제. (국민 고용비율 20% 룰 적용)</li>
+            <li><b>숙련기능(E-7-4):</b> 제조업 등 4년 이상 근무자 점수제 전환</li>
+        </ul>
+        <div class="point-box">
+            <h5>📊 E-7-4 숙련기능 점수제 (K-point E74, 300점 만점)</h5>
+            • <b>합격 기준:</b> <b>총점 200점 이상</b> (연소득 50점, 한국어 50점 필수 포함)<br>
+            • 추천가점: 지자체/중앙부처/기업 추천 등
+        </div>
+    </div>
+
+    <div id="content-step2" class="detail-screen">
+        <a href="javascript:void(0);" onclick="goBack()" class="btn-back">🔙 메인화면으로 돌아가기</a>
+        <div class="title-badge">단계 2: 취업에서 거주로</div>
+        
+        <div class="section-title">■ E-7 ➔ F-2-7 (우수인재 거주)</div>
+        <ul>
+            <li><b>대상:</b> E-7 등의 전문인력으로 1년 이상 합법 체류한 사람 (국내 석사 이상은 기간 면제)</li>
+            <li><b>자격변경 점수제 적용:</b></li>
+        </ul>
+        <div class="point-box">
+            <h5>📊 F-2-7 우수인재 점수제 (총 170점 만점)</h5>
+            • <b>합격 기준:</b> <b>총점 80점 이상</b> 득점자<br>
+            • 평가항목: 연령(25), 학력(25), 한국어능력(20), 연소득(60)<br>
+            • 가점항목(40): 국내유학, 사회봉사, 납세실적 등<br>
+            • 감점항목(-70): 출입국관리법 위반, 형사처벌 전력
+        </div>
+        <ul>
+            <li><b>필수 구비서류:</b> 점수제 평가표 및 입증서류(학위, TOPIK, 소득금액증명원 등), 고용계약서, 사업자등록증 등</li>
+        </ul>
+    </div>
+
+    <div id="content-step3" class="detail-screen">
+        <a href="javascript:void(0);" onclick="goBack()" class="btn-back">🔙 메인화면으로 돌아가기</a>
+        <div class="title-badge">단계 3: 거주에서 영주로 (최종)</div>
+        
+        <div class="section-title">■ F-2-7 ➔ F-5-16 (점수제 영주자)</div>
+        <ul>
+            <li><b>대상:</b> 점수제 우수인재(F-2-7) 자격으로 대한민국에서 <b>3년 이상</b> 계속 체류 중인 사람 <span class="citation"></span></li>
+            <li><b>생계유지능력 (택1):</b> <br>
+                ① 전년도 1인당 GNI(국민총소득) <b>2배 이상</b> <span class="highlight">또는</span> <br>
+                ② 전년도 평균 순자산 <b>1.5배 이상</b> <span class="citation"></span>
+            </li>
+            <li><b>필수 구비서류:</b> 고용계약서, 사업자등록증, 소득/자산 입증서류, 해외범죄경력증명서, 사회통합프로그램 이수증 <span class="citation"></span></li>
+        </ul>
+    </div>
+
+    <div id="content-step4" class="detail-screen">
+        <a href="javascript:void(0);" onclick="goBack()" class="btn-back">🔙 메인화면으로 돌아가기</a>
+        <div class="title-badge">특례: 취업에서 영주 다이렉트</div>
+        
+        <div class="section-title">■ E-7 ➔ F-5-10 (국내 학위 영주)</div>
+        <p style="font-size:13px; color:#7f8c8d; margin-top:0;">※ F-2를 거치지 않고 바로 영주권을 취득하는 가장 빠른 경로입니다.</p>
+        <ul>
+            <li><b>대상:</b> 국내 정규 학사·석사·박사 학위 취득 후 <b>3년 이상</b> 체류 중이며, 국내 기업 정규직 고용자 <span class="citation"></span></li>
+            <li><b>소득 요건:</b> 전년도 1인당 GNI 이상 (F-5-16보다 기준이 2배 낮음) <span class="citation"></span></li>
+            <li><b>기본소양:</b> 사회통합프로그램(KIIP) 5단계 이수 또는 종합평가 60점 이상 <span class="citation"></span></li>
+            <li><b>필수 구비서류:</b> 학위증, 정규직 고용계약서, 재직증명서, 소득금액증명원, 해외범죄경력증명서 <span class="citation"></span></li>
+        </ul>
+    </div>
+
+    <div id="content-step5" class="detail-screen">
+        <a href="javascript:void(0);" onclick="goBack()" class="btn-back">🔙 메인화면으로 돌아가기</a>
+        <div class="title-badge">동포비자 ➔ 영주권</div>
+        
+        <div class="section-title">■ 1. F-4 ➔ F-5-6 (재외동포 영주)</div>
+        <ul>
+            <li><b>대상:</b> 재외동포(F-4) 자격으로 대한민국에 2년 이상 계속 체류하고 있는 사람 <span class="citation"></span></li>
+            <li><b>생계유지 (택1):</b> 전년도 1인당 GNI 이상 <span class="highlight">또는</span> 재산세 납부실적 50만원 이상 <span class="highlight">또는</span> 평균순자산 이상 보유 <span class="citation"></span></li>
+        </ul>
+
+        <div class="section-title">■ 2. H-2 ➔ F-5-14 (방문취업 영주)</div>
+        <ul>
+            <li><b>대상:</b> 방문취업(H-2) 자격으로 동일업체 근무처 변경 없이 4년 이상 계속 근무한 사람 <span class="citation"></span></li>
+        </ul>
+    </div>
+
+    <div id="content-step6" class="detail-screen">
+        <a href="javascript:void(0);" onclick="goBack()" class="btn-back">🔙 메인화면으로 돌아가기</a>
+        <div class="title-badge" style="background-color:#fdedec; color:#c0392b; border:1px solid #e74c3c;">⚠️ G-1(기타) 비자의 자격변경 한계</div>
+        
+        <div class="section-title">■ G-1 체류자의 장기비자 자격변경 절대 불가 원칙</div>
+        <p style="font-size:14px; margin-top:5px; margin-bottom:15px; line-height:1.6;">
+            출입국관리법 매뉴얼에 따라 G-1(산재, 소송, 난민신청 등) 비자 소지자는 <b>원칙적으로 취업(E-7), 구직(D-10), 거주(F-2), 영주(F-5) 등의 장기 체류자격으로의 변경이 전면 제한</b>됩니다. <span class="citation"></span><br>
+            따라서 유학생(D-2)이나 취업자(E-7)가 G-1 비자로 한 번 넘어갈 경우, 영주권 테크트리는 <b>영구 단절</b>되며 본국으로 출국 후 사증을 새로 받아야 합니다.
+        </p>
+        
+        <div class="section-title">■ G-1에서 국내 자격변경이 가능한 '유일한' 예외 코드</div>
+        <div class="point-box" style="border-left-color:#8e44ad;">
+            <h5>🌟 G-1-5 (난민신청자) ➔ F-2-4 (난민인정 거주) ➔ F-5-3 (영주권)</h5>
+            • <b>경로 설명:</b> G-1-5 자격으로 체류하던 중, 법무부로부터 정식으로 <b>'난민 인정(F-2-4)'</b> 결정을 받은 경우에만 거주 비자로 변경이 허용됩니다. <span class="citation"></span><br>
+            • 이후 F-2-4 자격으로 국내에서 요건을 채우면 <b>F-5-3(난민 영주권)</b>으로 최종 변경이 가능합니다. <span class="citation"></span>
+        </div>
+        <ul>
+            <li>위의 특수한 난민 인정 절차를 제외한 G-1-1(산재), G-1-2(질병), G-1-10(소송) 등은 국내에서 F-5로 넘어가는 방법이 <b>전혀 없습니다.</b></li>
+        </ul>
+    </div>
+
+    <script>
+        function openDetail(type) {
+            var details = document.getElementsByClassName('detail-screen');
+            for(var i=0; i<details.length; i++) {
+                details[i].style.display = 'none';
+            }
+            
+            document.getElementById('content-' + type).style.display = 'block';
+            document.getElementById('home-screen').style.display = 'none';
+            
+            window.location.hash = 'detail';
+            window.scrollTo(0, 0); 
+        }
+
+        window.addEventListener('hashchange', function() {
+            if (window.location.hash === '' || window.location.hash === '#') {
+                var details = document.getElementsByClassName('detail-screen');
+                for(var i=0; i<details.length; i++) {
+                    details[i].style.display = 'none';
+                }
+                document.getElementById('home-screen').style.display = 'block';
+                window.scrollTo(0, 0);
+            }
+        });
+
+        function goBack() {
+            history.back();
+        }
+    </script>
+</body>
+</html>
