@@ -7,18 +7,18 @@
     <style>
         body { font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; background-color: #f4f7f6; margin: 0; padding: 15px; color: #333; }
         .header { text-align: center; margin-bottom: 20px; padding-top: 10px; }
-        .header h2 { font-size: 22px; margin-bottom: 5px; color: #2c3e50; }
-        .header p { font-size: 14px; color: #7f8c8d; }
+        .header h2 { font-size: 24px; margin-bottom: 5px; color: #2c3e50; }
         
         .btn-container { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-        .btn { display: block; text-decoration: none; text-align: center; padding: 15px; font-size: 14px; font-weight: bold; color: white; border: none; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; box-sizing: border-box; }
+        .btn { display: block; text-decoration: none; text-align: left; padding: 15px; font-size: 14px; font-weight: bold; color: white; border: none; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); cursor: pointer; box-sizing: border-box; }
         .btn-step1 { background-color: #16a085; }
         .btn-step2 { background-color: #27ae60; }
         .btn-step3 { background-color: #2980b9; }
         .btn-step4 { background-color: #8e44ad; }
         .btn-step5 { background-color: #34495e; }
-        .btn-calc { background-color: #e67e22; margin-top: 10px; }
-        .expert-contact { text-align: center; margin-top: 5px; font-size: 15px; font-weight: bold; color: #d35400; }
+        .btn-calc { background-color: #e67e22; }
+        .btn-calc2 { background-color: #d35400; }
+        .expert-contact { text-align: center; margin-top: 15px; font-size: 15px; font-weight: bold; color: #c0392b; }
         
         .detail-screen { display: none; background-color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
         .btn-back { display: block; width: 100%; padding: 12px; background-color: #95a5a6; color: white; font-weight: bold; text-align: center; border-radius: 8px; margin-bottom: 15px; text-decoration: none; box-sizing: border-box; }
@@ -38,7 +38,6 @@
         select { width: 100%; padding: 10px; margin-bottom: 5px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px; box-sizing: border-box; }
         .score-result { text-align: center; font-size: 18px; font-weight: bold; margin-top: 15px; padding: 15px; background-color: #e8f8f5; border-radius: 8px; color: #16a085; }
         .fail-result { background-color: #fdedec; color: #c0392b; }
-        .special-result { background-color: #fff3cd; color: #d35400; border: 2px solid #ffe69c; }
         .fixed-score { padding:10px; background:#e8f4f8; border-radius:6px; margin-bottom:5px; font-size:14px; color:#333; display: flex; justify-content: space-between;}
         .fixed-score span { font-weight: bold; color: #2980b9; }
     </style>
@@ -48,15 +47,17 @@
     <div id="home-screen">
         <div class="header">
             <h2>🎓 비자 내비게이션</h2>
-            <p>현재 비자에서 F-2, F-5로 가는 경로를 선택하세요.</p>
-        </div>
+            </div>
         <div class="btn-container">
             <a href="#view" class="btn btn-step1" onclick="openDetail('e71')">▶ 경로 1 : E-7-1 (일반취업) ➔ F-2 / F-5</a>
             <a href="#view" class="btn btn-step2" onclick="openDetail('e74')">▶ 경로 2 : E-7-4 (숙련기능) ➔ F-2 / F-5</a>
             <a href="#view" class="btn btn-step3" onclick="openDetail('f2r')">▶ 경로 3 : F-2-R (지역특화형) ➔ F-5</a>
             <a href="#view" class="btn btn-step4" onclick="openDetail('f4')">▶ 경로 4 : F-4, H-2 (동포) ➔ F-5</a>
             <a href="#view" class="btn btn-step5" onclick="openDetail('d2')">▶ 참 고 : D-2 (유학) ➔ D-10 / E-7</a>
-            <a href="#view" class="btn btn-calc" onclick="openDetail('calc')">📋 부 록 : D-10-1 점수 계산기</a>
+            
+            <div style="height: 10px;"></div> <a href="#view" class="btn btn-calc" onclick="openDetail('calcD10')">📋 계산기 1 : D-10 구직비자 배점표</a>
+            <a href="#view" class="btn btn-calc2" onclick="openDetail('calcF27')">📋 계산기 2 : F-2-7 / F-5-16 배점표</a>
+            
             <div class="expert-contact">📞 엑스퍼트행정사 010-9077-4388</div>
         </div>
     </div>
@@ -116,7 +117,7 @@
     <div id="content-f2r" class="detail-screen">
         <a href="javascript:void(0);" onclick="goBack()" class="btn-back">🔙 메인화면으로 돌아가기</a>
         <div class="title-badge">F-2-R (지역특화형 우수인재) 경로</div>
-        <p style="font-size:13px; color:#7f8c8d; margin-top:5px;">※ 인구감소지역에 정착하는 유학생/외국인을 위한 파격적인 특례 경로입니다.</p>
+        <p style="font-size:13px; color:#7f8c8d; margin-top:5px;">※ 인구감소지역에 정착하는 유학생/외국인을 위한 특례 경로입니다.</p>
 
         <div class="section-title">■ D-2 / D-10 ➔ F-2-R (지역특화형 거주)</div>
         <ul>
@@ -170,16 +171,16 @@
         </ul>
     </div>
 
-    <div id="content-calc" class="detail-screen">
+    <div id="content-calcD10" class="detail-screen">
         <a href="javascript:void(0);" onclick="goBack()" class="btn-back">🔙 메인화면으로 돌아가기</a>
-        <div class="title-badge" style="background-color:#e67e22; color:white;">D-10-1 연장 배점표 계산기</div>
+        <div class="title-badge" style="background-color:#e67e22; color:white;">D-10-1 구직비자 배점표 계산기</div>
         
         <p style="font-size:12px; color:#666;">※ 총점 60점 이상 & 기본항목 20점 이상 시 합격</p>
         
         <div class="calc-section">
             <span class="calc-cat">▶ 1. 기본 항목 (최대 50점)</span>
             <b>① 연령</b>
-            <select id="selAge" onchange="calcScore()">
+            <select id="d10Age" onchange="calcD10()">
                 <option value="0">선택하세요</option>
                 <option value="10">20세~24세 (+10점)</option>
                 <option value="15">25세~29세 (+15점)</option>
@@ -191,27 +192,21 @@
             <div class="fixed-score">국내/외 전문학사 이상 <span>+15점</span></div>
             
             <span class="calc-cat">▶ 2. 선택 항목 (최대 70점)</span>
-            <b>③ 취업경력 (최근 10년 이내 전공관련)</b>
-            <select id="selWork" onchange="calcScore()">
+            <b>③ 취업경력 (최근 10년 이내)</b>
+            <select id="d10Work" onchange="calcD10()">
                 <option value="0">해당 없음 (0점)</option>
-                <option value="5">1년~2년 / 국외 3년~4년 (+5점)</option>
-                <option value="10">3년~4년 / 국외 5년~6년 (+10점)</option>
-                <option value="15">5년 이상 / 국외 7년 이상 (+15점)</option>
+                <option value="5">국내 1~2년 / 국외 3~4년 (+5점)</option>
+                <option value="10">국내 3~4년 / 국외 5~6년 (+10점)</option>
+                <option value="15">국내 5년 이상 / 국외 7년 이상 (+15점)</option>
             </select>
             <b>④ 유학경력 (졸업 후 3년 이내)</b>
-            <select id="selStudy" onchange="calcScore()">
-                <option value="30">국내 전문학사 졸업 (+30점)</option>
-                <option value="5">국외 전문학사 졸업 (+5점)</option>
-                <option value="0">해당 없음 / 졸업 후 3년 경과 (0점)</option>
+            <select id="d10Study" onchange="calcD10()">
+                <option value="30">국내 전문학사 이상 졸업 (+30점)</option>
+                <option value="5">국외 전문학사 이상 졸업 (+5점)</option>
+                <option value="0">해당 없음 / 3년 경과 (0점)</option>
             </select>
-            <b>⑤ 기타 국내 연수경력</b>
-            <select id="selTrain" onchange="calcScore()">
-                <option value="0">해당 없음 (0점)</option>
-                <option value="3">대학 연구생 / 어학연수 12~18개월 (+3점)</option>
-                <option value="5">국공립기관 연수 / 어학연수 19개월 이상 (+5점)</option>
-            </select>
-            <b>⑥ 한국어 능력 (※ 4급 이상 특례 대상)</b>
-            <select id="selLang" onchange="calcScore()">
+            <b>⑤ 한국어 능력</b>
+            <select id="d10Lang" onchange="calcD10()">
                 <option value="0">해당 없음 (0점)</option>
                 <option value="5">TOPIK 2급 / KIIP 2단계 (+5점)</option>
                 <option value="10">TOPIK 3급 / KIIP 3단계 (+10점)</option>
@@ -220,23 +215,92 @@
             </select>
             
             <span class="calc-cat">▶ 3. 가점 및 감점</span>
-            <b>⑦ 가점 (우대조건)</b>
-            <select id="selBonus" onchange="calcScore()">
+            <b>⑥ 가점 (우대조건)</b>
+            <select id="d10Bonus" onchange="calcD10()">
                 <option value="0">해당 없음 (0점)</option>
-                <option value="5">이공계 학사(국내 전문학사 포함) (+5점)</option>
-                <option value="5">고소득 전문직 종사 (+5점)</option>
-                <option value="20">세계우수대학 졸업 등 (+20점)</option>
+                <option value="5">이공계 학사 (+5점)</option>
+                <option value="20">세계우수대학 졸업 (+20점)</option>
             </select>
-            <b>⑧ 감점 (법 위반)</b>
-            <select id="selPenalty" onchange="calcScore()">
+            <b>⑦ 감점 (법 위반)</b>
+            <select id="d10Penalty" onchange="calcD10()">
                 <option value="0">위반 없음 (0점)</option>
                 <option value="-5">출입국관리법 위반 1회 (-5점)</option>
-                <option value="-10">출입국관리법 위반 2회 (-10점)</option>
                 <option value="-30">출입국관리법 위반 3회 (-30점)</option>
             </select>
         </div>
-        <div id="scoreResult" class="score-result fail-result">항목을 선택하여 점수를 확인하세요.</div>
+        <div id="d10Result" class="score-result fail-result">항목을 선택하여 점수를 확인하세요.</div>
     </div>
+
+    <div id="content-calcF27" class="detail-screen">
+        <a href="javascript:void(0);" onclick="goBack()" class="btn-back">🔙 메인화면으로 돌아가기</a>
+        <div class="title-badge" style="background-color:#d35400; color:white;">F-2-7 / F-5-16 배점표 계산기</div>
+        
+        <p style="font-size:12px; color:#666;">※ 총점 170점 만점 중 <b>80점 이상</b> 득점 시 합격<br>※ F-5-16(영주권) 심사 시에도 이 점수(80점 유지)를 확인합니다.</p>
+        
+        <div class="calc-section">
+            <span class="calc-cat">▶ 1. 연령 (최대 25점)</span>
+            <select id="f2Age" onchange="calcF27()">
+                <option value="0">선택하세요</option>
+                <option value="23">18세 ~ 24세 (+23점)</option>
+                <option value="25">25세 ~ 29세 (+25점)</option>
+                <option value="23">30세 ~ 34세 (+23점)</option>
+                <option value="20">35세 ~ 39세 (+20점)</option>
+                <option value="12">40세 ~ 44세 (+12점)</option>
+                <option value="8">45세 ~ 50세 (+8점)</option>
+                <option value="3">51세 이상 (+3점)</option>
+            </select>
+            
+            <span class="calc-cat">▶ 2. 학력 (최대 25점)</span>
+            <select id="f2Edu" onchange="calcF27()">
+                <option value="0">선택하세요</option>
+                <option value="15">고졸 (+15점)</option>
+                <option value="17">전문학사 (+17점)</option>
+                <option value="20">학사 (+20점)</option>
+                <option value="23">석사 (+23점)</option>
+                <option value="25">박사 (+25점)</option>
+            </select>
+            
+            <span class="calc-cat">▶ 3. 한국어 능력 (최대 20점)</span>
+            <select id="f2Lang" onchange="calcF27()">
+                <option value="0">해당 없음 / 1급 (+0점)</option>
+                <option value="5">TOPIK 2급 / KIIP 2단계 (+5점)</option>
+                <option value="10">TOPIK 3급 / KIIP 3단계 (+10점)</option>
+                <option value="15">TOPIK 4급 / KIIP 4단계 (+15점)</option>
+                <option value="20">TOPIK 5급 이상 / KIIP 5단계 (+20점)</option>
+            </select>
+            
+            <span class="calc-cat">▶ 4. 연간 소득 (최대 60점)</span>
+            <select id="f2Income" onchange="calcF27()">
+                <option value="0">선택하세요 (소득 없음)</option>
+                <option value="10">3천만원 미만 (+10점)</option>
+                <option value="20">3천만원 이상 (+20점)</option>
+                <option value="30">4천만원 이상 (+30점)</option>
+                <option value="40">5천만원 이상 (+40점)</option>
+                <option value="50">6천만원 이상 (+50점)</option>
+                <option value="53">7천만원 이상 (+53점)</option>
+                <option value="56">8천만원 이상 (+56점)</option>
+                <option value="60">1억원 이상 (+60점)</option>
+            </select>
+            
+            <span class="calc-cat">▶ 5. 가점 및 감점</span>
+            <b>국내 유학 경험 (가점)</b>
+            <select id="f2Bonus" onchange="calcF27()">
+                <option value="0">해당 없음 (0점)</option>
+                <option value="8">국내 전문학사 취득 (+8점)</option>
+                <option value="10">국내 학사 취득 (+10점)</option>
+                <option value="15">국내 석사 취득 (+15점)</option>
+                <option value="16">국내 박사 취득 (+16점)</option>
+            </select>
+            <b>법 위반 (감점)</b>
+            <select id="f2Penalty" onchange="calcF27()">
+                <option value="0">위반 없음 (0점)</option>
+                <option value="-10">출입국관리법 위반 (-10점~)</option>
+                <option value="-50">형사 처벌 전력 (-50점~)</option>
+            </select>
+        </div>
+        <div id="f2Result" class="score-result fail-result">항목을 선택하여 점수를 확인하세요.</div>
+    </div>
+
 
     <script>
         function openDetail(type) {
@@ -267,18 +331,17 @@
             history.back();
         }
 
-        // 점수 계산기 로직
-        function calcScore() {
-            var age = parseInt(document.getElementById('selAge').value) || 0;
+        // [계산기 1] D-10 구직비자 로직
+        function calcD10() {
+            var age = parseInt(document.getElementById('d10Age').value) || 0;
             var edu = 15; 
-            var work = parseInt(document.getElementById('selWork').value) || 0;
-            var study = parseInt(document.getElementById('selStudy').value) || 0; 
-            var train = parseInt(document.getElementById('selTrain').value) || 0;
-            var lang = parseInt(document.getElementById('selLang').value) || 0;
-            var bonus = parseInt(document.getElementById('selBonus').value) || 0;
-            var penalty = parseInt(document.getElementById('selPenalty').value) || 0;
+            var work = parseInt(document.getElementById('d10Work').value) || 0;
+            var study = parseInt(document.getElementById('d10Study').value) || 0; 
+            var lang = parseInt(document.getElementById('d10Lang').value) || 0;
+            var bonus = parseInt(document.getElementById('d10Bonus').value) || 0;
+            var penalty = parseInt(document.getElementById('d10Penalty').value) || 0;
 
-            var resultDiv = document.getElementById('scoreResult');
+            var resultDiv = document.getElementById('d10Result');
 
             if (age === 0) {
                 resultDiv.className = "score-result fail-result";
@@ -287,14 +350,8 @@
             }
 
             var basicScore = age + edu;
-            var totalScore = basicScore + work + study + train + lang + bonus + penalty;
+            var totalScore = basicScore + work + study + lang + bonus + penalty;
             
-            if (study === 30 && lang >= 15) {
-                resultDiv.className = "score-result special-result";
-                resultDiv.innerHTML = "🌟 <b>한국어 우수자 특례 적용!</b><br><span style='font-size:14px; font-weight:normal;'>국내 전문학사 졸업 후 3년 이내 + TOPIK 4급 이상으로<br><b>점수제 심사가 전면 면제</b>되어 연장이 가능합니다!</span>";
-                return;
-            }
-
             if (basicScore < 20) {
                 resultDiv.className = "score-result fail-result";
                 resultDiv.innerHTML = "총점 " + totalScore + "점<br><span style='font-size:14px; font-weight:normal;'>(불합격: 기본항목 20점 미만)</span>";
@@ -303,7 +360,35 @@
                 resultDiv.innerHTML = "총점 " + totalScore + "점<br><span style='font-size:14px; font-weight:normal;'>(불합격: 총점 60점 미만)</span>";
             } else {
                 resultDiv.className = "score-result";
-                resultDiv.innerHTML = "🎉 총점 " + totalScore + "점<br><span style='font-size:14px; font-weight:normal;'>(연장 신청 가능 요건 충족!)</span>";
+                resultDiv.innerHTML = "🎉 총점 " + totalScore + "점<br><span style='font-size:14px; font-weight:normal;'>(합격: 점수제 요건 충족)</span>";
+            }
+        }
+
+        // [계산기 2] F-2-7 / F-5-16 점수제 로직
+        function calcF27() {
+            var age = parseInt(document.getElementById('f2Age').value) || 0;
+            var edu = parseInt(document.getElementById('f2Edu').value) || 0;
+            var lang = parseInt(document.getElementById('f2Lang').value) || 0;
+            var income = parseInt(document.getElementById('f2Income').value) || 0;
+            var bonus = parseInt(document.getElementById('f2Bonus').value) || 0;
+            var penalty = parseInt(document.getElementById('f2Penalty').value) || 0;
+
+            var resultDiv = document.getElementById('f2Result');
+
+            if (age === 0 || edu === 0 || income === 0) {
+                resultDiv.className = "score-result fail-result";
+                resultDiv.innerHTML = "연령, 학력, 소득 항목을 모두 선택해주세요.";
+                return;
+            }
+
+            var totalScore = age + edu + lang + income + bonus + penalty;
+
+            if (totalScore < 80) {
+                resultDiv.className = "score-result fail-result";
+                resultDiv.innerHTML = "총점 " + totalScore + "점<br><span style='font-size:14px; font-weight:normal;'>(불합격: 80점 미만)</span>";
+            } else {
+                resultDiv.className = "score-result";
+                resultDiv.innerHTML = "🎉 총점 " + totalScore + "점<br><span style='font-size:14px; font-weight:normal;'>(합격: 80점 이상 충족!)</span>";
             }
         }
     </script>
