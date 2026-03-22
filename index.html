@@ -18,6 +18,7 @@
         .btn-step4 { background-color: #8e44ad; }
         .btn-step5 { background-color: #f39c12; }
         .btn-step6 { background-color: #c0392b; }
+        .btn-calc { background-color: #e67e22; margin-top: 10px; }
         .expert-contact { text-align: center; margin-top: 5px; font-size: 15px; font-weight: bold; color: #d35400; }
         
         .detail-screen { display: none; background-color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
@@ -32,6 +33,16 @@
         .point-box { background-color: #f8f9fa; border-left: 4px solid #3498db; padding: 10px 15px; margin: 10px 0; border-radius: 4px; font-size: 13px; }
         .point-box h5 { margin: 0 0 5px 0; color: #2980b9; }
         .citation { font-size: 11px; color: #95a5a6; display: block; margin-top: 2px; }
+
+        /* 계산기 전용 스타일 */
+        .calc-section { border: 1px solid #ddd; padding: 15px; border-radius: 8px; margin-bottom: 15px; background-color: #fafafa; }
+        .calc-cat { font-size: 14px; font-weight: bold; color: #2980b9; margin-top: 15px; margin-bottom: 5px; display: block; border-bottom: 1px dashed #ccc; padding-bottom: 5px; }
+        select { width: 100%; padding: 10px; margin-bottom: 5px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px; box-sizing: border-box; }
+        .score-result { text-align: center; font-size: 18px; font-weight: bold; margin-top: 15px; padding: 15px; background-color: #e8f8f5; border-radius: 8px; color: #16a085; }
+        .fail-result { background-color: #fdedec; color: #c0392b; }
+        .special-result { background-color: #fff3cd; color: #d35400; border: 2px solid #ffe69c; }
+        .fixed-score { padding:10px; background:#e8f4f8; border-radius:6px; margin-bottom:5px; font-size:14px; color:#333; display: flex; justify-content: space-between;}
+        .fixed-score span { font-weight: bold; color: #2980b9; }
     </style>
 </head>
 <body>
@@ -48,6 +59,7 @@
             <a href="#view" class="btn btn-step4" onclick="openDetail('step4')">▶ 특 례 : E-7 ➔ F-5-10 (국내학위 영주)</a>
             <a href="#view" class="btn btn-step5" onclick="openDetail('step5')">▶ 동 포 : F-4, H-2 ➔ F-5 (동포 영주)</a>
             <a href="#view" class="btn btn-step6" onclick="openDetail('step6')">⚠️ 주의 : G-1(기타) 비자의 자격변경 한계</a>
+            <a href="#view" class="btn btn-calc" onclick="openDetail('calc')">📋 부록 : D-10 자동 점수 계산기</a>
             <div class="expert-contact">📞 엑스퍼트행정사 010-9077-4388</div>
         </div>
     </div>
@@ -69,7 +81,8 @@
             • <b>합격 기준:</b> 기본항목 20점 이상 포함, <b>총점 60점 이상</b><br>
             • 기본항목(50점): 연령(20), 최종학력(30)<br>
             • 선택항목(70점): 한국어능력(20), 국내유학(30), 취업경력(15) 등<br>
-            • 가점항목(70점): 이공계 학사(5), 우수대학 졸업 등
+            • 가점항목(70점): 이공계 학사(5), 우수대학 졸업 등<br>
+            <span style="color:#e67e22; font-weight:bold;">※ 메인화면의 [부록 : D-10 자동 점수 계산기]를 활용해보세요!</span>
         </div>
 
         <div class="section-title">■ 1-2. D-10 (구직) ➔ E-7 (취업)</div>
@@ -111,12 +124,12 @@
         
         <div class="section-title">■ F-2-7 ➔ F-5-16 (점수제 영주자)</div>
         <ul>
-            <li><b>대상:</b> 점수제 우수인재(F-2-7) 자격으로 대한민국에서 <b>3년 이상</b> 계속 체류 중인 사람 <span class="citation"></span></li>
+            <li><b>대상:</b> 점수제 우수인재(F-2-7) 자격으로 대한민국에서 <b>3년 이상</b> 계속 체류 중인 사람</li>
             <li><b>생계유지능력 (택1):</b> <br>
                 ① 전년도 1인당 GNI(국민총소득) <b>2배 이상</b> <span class="highlight">또는</span> <br>
-                ② 전년도 평균 순자산 <b>1.5배 이상</b> <span class="citation"></span>
+                ② 전년도 평균 순자산 <b>1.5배 이상</b>
             </li>
-            <li><b>필수 구비서류:</b> 고용계약서, 사업자등록증, 소득/자산 입증서류, 해외범죄경력증명서, 사회통합프로그램 이수증 <span class="citation"></span></li>
+            <li><b>필수 구비서류:</b> 고용계약서, 사업자등록증, 소득/자산 입증서류, 해외범죄경력증명서, 사회통합프로그램 이수증</li>
         </ul>
     </div>
 
@@ -127,10 +140,10 @@
         <div class="section-title">■ E-7 ➔ F-5-10 (국내 학위 영주)</div>
         <p style="font-size:13px; color:#7f8c8d; margin-top:0;">※ F-2를 거치지 않고 바로 영주권을 취득하는 가장 빠른 경로입니다.</p>
         <ul>
-            <li><b>대상:</b> 국내 정규 학사·석사·박사 학위 취득 후 <b>3년 이상</b> 체류 중이며, 국내 기업 정규직 고용자 <span class="citation"></span></li>
-            <li><b>소득 요건:</b> 전년도 1인당 GNI 이상 (F-5-16보다 기준이 2배 낮음) <span class="citation"></span></li>
-            <li><b>기본소양:</b> 사회통합프로그램(KIIP) 5단계 이수 또는 종합평가 60점 이상 <span class="citation"></span></li>
-            <li><b>필수 구비서류:</b> 학위증, 정규직 고용계약서, 재직증명서, 소득금액증명원, 해외범죄경력증명서 <span class="citation"></span></li>
+            <li><b>대상:</b> 국내 정규 학사·석사·박사 학위 취득 후 <b>3년 이상</b> 체류 중이며, 국내 기업 정규직 고용자</li>
+            <li><b>소득 요건:</b> 전년도 1인당 GNI 이상 (F-5-16보다 기준이 2배 낮음)</li>
+            <li><b>기본소양:</b> 사회통합프로그램(KIIP) 5단계 이수 또는 종합평가 60점 이상</li>
+            <li><b>필수 구비서류:</b> 학위증, 정규직 고용계약서, 재직증명서, 소득금액증명원, 해외범죄경력증명서</li>
         </ul>
     </div>
 
@@ -140,13 +153,13 @@
         
         <div class="section-title">■ 1. F-4 ➔ F-5-6 (재외동포 영주)</div>
         <ul>
-            <li><b>대상:</b> 재외동포(F-4) 자격으로 대한민국에 2년 이상 계속 체류하고 있는 사람 <span class="citation"></span></li>
-            <li><b>생계유지 (택1):</b> 전년도 1인당 GNI 이상 <span class="highlight">또는</span> 재산세 납부실적 50만원 이상 <span class="highlight">또는</span> 평균순자산 이상 보유 <span class="citation"></span></li>
+            <li><b>대상:</b> 재외동포(F-4) 자격으로 대한민국에 2년 이상 계속 체류하고 있는 사람</li>
+            <li><b>생계유지 (택1):</b> 전년도 1인당 GNI 이상 <span class="highlight">또는</span> 재산세 납부실적 50만원 이상 <span class="highlight">또는</span> 평균순자산 이상 보유</li>
         </ul>
 
         <div class="section-title">■ 2. H-2 ➔ F-5-14 (방문취업 영주)</div>
         <ul>
-            <li><b>대상:</b> 방문취업(H-2) 자격으로 동일업체 근무처 변경 없이 4년 이상 계속 근무한 사람 <span class="citation"></span></li>
+            <li><b>대상:</b> 방문취업(H-2) 자격으로 동일업체 근무처 변경 없이 4년 이상 계속 근무한 사람</li>
         </ul>
     </div>
 
@@ -156,19 +169,87 @@
         
         <div class="section-title">■ G-1 체류자의 장기비자 자격변경 절대 불가 원칙</div>
         <p style="font-size:14px; margin-top:5px; margin-bottom:15px; line-height:1.6;">
-            출입국관리법 매뉴얼에 따라 G-1(산재, 소송, 난민신청 등) 비자 소지자는 <b>원칙적으로 취업(E-7), 구직(D-10), 거주(F-2), 영주(F-5) 등의 장기 체류자격으로의 변경이 전면 제한</b>됩니다. <span class="citation"></span><br>
+            출입국관리법 매뉴얼에 따라 G-1(산재, 소송, 난민신청 등) 비자 소지자는 <b>원칙적으로 취업(E-7), 구직(D-10), 거주(F-2), 영주(F-5) 등의 장기 체류자격으로의 변경이 전면 제한</b>됩니다.<br>
             따라서 유학생(D-2)이나 취업자(E-7)가 G-1 비자로 한 번 넘어갈 경우, 영주권 테크트리는 <b>영구 단절</b>되며 본국으로 출국 후 사증을 새로 받아야 합니다.
         </p>
         
         <div class="section-title">■ G-1에서 국내 자격변경이 가능한 '유일한' 예외 코드</div>
         <div class="point-box" style="border-left-color:#8e44ad;">
             <h5>🌟 G-1-5 (난민신청자) ➔ F-2-4 (난민인정 거주) ➔ F-5-3 (영주권)</h5>
-            • <b>경로 설명:</b> G-1-5 자격으로 체류하던 중, 법무부로부터 정식으로 <b>'난민 인정(F-2-4)'</b> 결정을 받은 경우에만 거주 비자로 변경이 허용됩니다. <span class="citation"></span><br>
-            • 이후 F-2-4 자격으로 국내에서 요건을 채우면 <b>F-5-3(난민 영주권)</b>으로 최종 변경이 가능합니다. <span class="citation"></span>
+            • <b>경로 설명:</b> G-1-5 자격으로 체류하던 중, 법무부로부터 정식으로 <b>'난민 인정(F-2-4)'</b> 결정을 받은 경우에만 거주 비자로 변경이 허용됩니다.<br>
+            • 이후 F-2-4 자격으로 국내에서 요건을 채우면 <b>F-5-3(난민 영주권)</b>으로 최종 변경이 가능합니다.
         </div>
         <ul>
             <li>위의 특수한 난민 인정 절차를 제외한 G-1-1(산재), G-1-2(질병), G-1-10(소송) 등은 국내에서 F-5로 넘어가는 방법이 <b>전혀 없습니다.</b></li>
         </ul>
+    </div>
+
+    <div id="content-calc" class="detail-screen">
+        <a href="javascript:void(0);" onclick="goBack()" class="btn-back">🔙 메인화면으로 돌아가기</a>
+        <div class="title-badge" style="background-color:#e67e22; color:white;">D-10-1 연장 배점표 계산기</div>
+        
+        <p style="font-size:12px; color:#666;">※ 총점 60점 이상 & 기본항목 20점 이상 시 합격</p>
+        
+        <div class="calc-section">
+            <span class="calc-cat">▶ 1. 기본 항목 (최대 50점)</span>
+            <b>① 연령</b>
+            <select id="selAge" onchange="calcScore()">
+                <option value="0">선택하세요</option>
+                <option value="10">20세~24세 (+10점)</option>
+                <option value="15">25세~29세 (+15점)</option>
+                <option value="20">30세~34세 (+20점)</option>
+                <option value="15">35세~39세 (+15점)</option>
+                <option value="5">40세~49세 (+5점)</option>
+            </select>
+            <b>② 최종학력</b>
+            <div class="fixed-score">국내/외 전문학사 이상 <span>+15점</span></div>
+            
+            <span class="calc-cat">▶ 2. 선택 항목 (최대 70점)</span>
+            <b>③ 취업경력 (최근 10년 이내 전공관련)</b>
+            <select id="selWork" onchange="calcScore()">
+                <option value="0">해당 없음 (0점)</option>
+                <option value="5">1년~2년 / 국외 3년~4년 (+5점)</option>
+                <option value="10">3년~4년 / 국외 5년~6년 (+10점)</option>
+                <option value="15">5년 이상 / 국외 7년 이상 (+15점)</option>
+            </select>
+            <b>④ 유학경력 (졸업 후 3년 이내)</b>
+            <select id="selStudy" onchange="calcScore()">
+                <option value="30">국내 전문학사 졸업 (+30점)</option>
+                <option value="5">국외 전문학사 졸업 (+5점)</option>
+                <option value="0">해당 없음 / 졸업 후 3년 경과 (0점)</option>
+            </select>
+            <b>⑤ 기타 국내 연수경력</b>
+            <select id="selTrain" onchange="calcScore()">
+                <option value="0">해당 없음 (0점)</option>
+                <option value="3">대학 연구생 / 어학연수 12~18개월 (+3점)</option>
+                <option value="5">국공립기관 연수 / 어학연수 19개월 이상 (+5점)</option>
+            </select>
+            <b>⑥ 한국어 능력 (※ 4급 이상은 특례 대상)</b>
+            <select id="selLang" onchange="calcScore()">
+                <option value="0">해당 없음 (0점)</option>
+                <option value="5">TOPIK 2급 / KIIP 2단계 (+5점)</option>
+                <option value="10">TOPIK 3급 / KIIP 3단계 (+10점)</option>
+                <option value="15">TOPIK 4급 / KIIP 4단계 (+15점)</option>
+                <option value="20">TOPIK 5급 이상 / KIIP 5단계 (+20점)</option>
+            </select>
+            
+            <span class="calc-cat">▶ 3. 가점 및 감점</span>
+            <b>⑦ 가점 (우대조건)</b>
+            <select id="selBonus" onchange="calcScore()">
+                <option value="0">해당 없음 (0점)</option>
+                <option value="5">이공계 학사(국내 전문학사 포함) (+5점)</option>
+                <option value="5">고소득(5만달러) 전문직 종사 (+5점)</option>
+                <option value="20">세계우수대학 졸업 등 (+20점)</option>
+            </select>
+            <b>⑧ 감점 (법 위반)</b>
+            <select id="selPenalty" onchange="calcScore()">
+                <option value="0">위반 없음 (0점)</option>
+                <option value="-5">출입국관리법 위반 1회 (-5점)</option>
+                <option value="-10">출입국관리법 위반 2회 (-10점)</option>
+                <option value="-30">출입국관리법 위반 3회 (-30점)</option>
+            </select>
+        </div>
+        <div id="scoreResult" class="score-result fail-result">항목을 선택하여 점수를 확인하세요.</div>
     </div>
 
     <script>
@@ -198,6 +279,46 @@
 
         function goBack() {
             history.back();
+        }
+
+        // 점수 계산기 로직
+        function calcScore() {
+            var age = parseInt(document.getElementById('selAge').value) || 0;
+            var edu = 15; 
+            var work = parseInt(document.getElementById('selWork').value) || 0;
+            var study = parseInt(document.getElementById('selStudy').value) || 0; 
+            var train = parseInt(document.getElementById('selTrain').value) || 0;
+            var lang = parseInt(document.getElementById('selLang').value) || 0;
+            var bonus = parseInt(document.getElementById('selBonus').value) || 0;
+            var penalty = parseInt(document.getElementById('selPenalty').value) || 0;
+
+            var resultDiv = document.getElementById('scoreResult');
+
+            if (age === 0) {
+                resultDiv.className = "score-result fail-result";
+                resultDiv.innerHTML = "기본 항목인 '연령'을 먼저 선택해주세요.";
+                return;
+            }
+
+            var basicScore = age + edu;
+            var totalScore = basicScore + work + study + train + lang + bonus + penalty;
+            
+            if (study === 30 && lang >= 15) {
+                resultDiv.className = "score-result special-result";
+                resultDiv.innerHTML = "🌟 <b>한국어 우수자 특례 적용!</b><br><span style='font-size:14px; font-weight:normal;'>국내 전문학사 졸업 후 3년 이내 + TOPIK 4급 이상으로<br><b>점수제 심사가 전면 면제</b>되어 연장이 가능합니다!</span>";
+                return;
+            }
+
+            if (basicScore < 20) {
+                resultDiv.className = "score-result fail-result";
+                resultDiv.innerHTML = "총점 " + totalScore + "점<br><span style='font-size:14px; font-weight:normal;'>(불합격: 기본항목 20점 미만)</span>";
+            } else if (totalScore < 60) {
+                resultDiv.className = "score-result fail-result";
+                resultDiv.innerHTML = "총점 " + totalScore + "점<br><span style='font-size:14px; font-weight:normal;'>(불합격: 총점 60점 미만)</span>";
+            } else {
+                resultDiv.className = "score-result";
+                resultDiv.innerHTML = "🎉 총점 " + totalScore + "점<br><span style='font-size:14px; font-weight:normal;'>(연장 신청 가능 요건 충족!)</span>";
+            }
         }
     </script>
 </body>
